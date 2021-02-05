@@ -6,7 +6,7 @@ I have added a requirements.txt file for easier installation.
 
 Also, for using ImageMagick - the new version does not have the file "convert.exe", but uses "magick.exe"
 
-This probably requires createing a symbolic link from the old name to the new one.
+This probably requires creating a symbolic link from the old executable name to the new one.
 
 As per this advice: https://legacy.imagemagick.org/discourse-server/viewtopic.php?t=29582
 
