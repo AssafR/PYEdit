@@ -1,3 +1,5 @@
+---- Addition by Assaf ------
+
 Note: This is a fork of the original with some minor changes, for use in Python 3 (and hints for Windows users)
 
 Original: https://github.com/Congren/PYEdit
@@ -14,6 +16,7 @@ On Windows you might need to run a command similar to this, but from an elevated
 
  mklink /H "C:\Program Files\ImageMagick-7.0.10-Q16-HDRI\convert.exe" "C:\Program Files\ImageMagick-7.0.10-Q16-HDRI\magick.exe"
 
+---- End Addition by Assaf ------
 
 Required Libraries and Modules:
 
