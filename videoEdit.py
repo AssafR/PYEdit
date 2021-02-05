@@ -1,9 +1,9 @@
-import Tkinter
-import Tkinter as tk
-from Tkinter import *
-import tkSimpleDialog
-import tkMessageBox
-import tkFileDialog
+import tkinter
+import tkinter as tk
+from tkinter import *
+import tkinter.simpledialog as tkSimpleDialog
+import tkinter.messagebox as tkMessageBox
+import tkinter.filedialog as tkFileDialog
 import string
 import math
 import eventBasedAnimation
@@ -86,7 +86,7 @@ def leftMousePressed(event):
         canvas.pressed = True
         canvas.message = ''
         currdir = os.getcwd()
-        root = Tkinter.Tk()
+        root = tkinter.Tk()
         root.withdraw()
         tempdir = tkFileDialog.askopenfilename(parent=root, initialdir=currdir,\
                                                title='Please select a Video')
@@ -103,7 +103,7 @@ def leftMousePressed(event):
         whichEdit(event,x,y)
     #checks which editor to use
     if canvas.condition == 3 and submit(x,y):
-        print canvas.start1,canvas.end1,canvas.start2,canvas.end2
+        print(canvas.start1,canvas.end1,canvas.start2,canvas.end2)
         useEditor(canvas)
     #checks which box is clicked
     if canvas.condition == 2 and 350<=x<=450 and 225<=y<=275:
@@ -482,7 +482,7 @@ def run():
     #in case want to implement full screen in the future
     #root=tk.Tk()
     #app=FullScreenApp(root)
-    root = Tkinter.Tk(className='Video editor')
+    root = tkinter.Tk(className='Video editor')
     canvas = Canvas(root,width=500,height=300)
     canvas.pack()
     root.canvas = canvas.canvas = canvas
@@ -586,7 +586,7 @@ def specialFour(event):
     try:
         canvas.condition = 5
         currdir = os.getcwd()
-        root = Tkinter.Tk()
+        root = tkinter.Tk()
         root.withdraw()
         temp = tkFileDialog.askopenfilename(parent=root, initialdir=currdir,\
                                          title='Please select a Video File')
@@ -660,7 +660,7 @@ def resetValues(canvas):
 def useEditor(canvas):
     #calls different editing functions depending on what is clicked
     current = canvas.selected
-    print canvas.start1,canvas.end1,canvas.start2,canvas.end2
+    print(canvas.start1,canvas.end1,canvas.start2,canvas.end2)
     #inserts clip
     if current == 1:
         canvas.create_text(250,150,text="Please Wait",font='Arial 60')
@@ -679,7 +679,7 @@ def useEditor(canvas):
         resetValues(canvas)
     #replaces clip
     elif current == 4:
-        print 4
+        print(4)
         canvas.create_text(250,150,text="Please Wait",font='Arial 60')
         clipReplace(canvas.start1,canvas.end1,canvas.message,\
                     canvas.path2,canvas.start2,canvas.end2)
@@ -705,7 +705,7 @@ def editOne(event):
         canvas.end = False
         #asks for file two
         currdir = os.getcwd()
-        root = Tkinter.Tk()
+        root = tkinter.Tk()
         root.withdraw()
         temp = tkFileDialog.askopenfilename(parent=root, initialdir=currdir,\
                                     title='Please select a Video File')
@@ -728,7 +728,7 @@ def editTwo(event):
         canvas.condition = 3
         canvas.end = False
         currdir = os.getcwd()
-        root = Tkinter.Tk()
+        root = tkinter.Tk()
         root.withdraw()
         temp = tkFileDialog.askopenfilename(parent=root, initialdir=currdir,\
                                         title='Please select a Sound File')
@@ -781,7 +781,7 @@ def editFour(event):
         canvas.selected = 4
         canvas.condition = 3
         currdir = os.getcwd()
-        root = Tkinter.Tk()
+        root = tkinter.Tk()
         root.withdraw()
         temp = tkFileDialog.askopenfilename(parent=root, initialdir=currdir,\
                                             title='Please select a Video File')
@@ -803,7 +803,7 @@ def editFive(event):
         canvas.selected = 5
         canvas.condition = 3
         currdir = os.getcwd()
-        root = Tkinter.Tk()
+        root = tkinter.Tk()
         root.withdraw()
         temp = tkFileDialog.askopenfilename(parent=root, initialdir=currdir, \
                                             title='Please select a Sound File')
@@ -923,7 +923,7 @@ def clipInsert(start,path,path2,t0,t1):
 
 #code for clip replacement
 def clipReplace(start,stop,path,path2,t0,t1):
-    print start,stop,path,path2,t0,t1
+    print(start,stop,path,path2,t0,t1)
     clip = VideoFileClip(path)
     clip.fps = 24
     clip2 = VideoFileClip(path2)
