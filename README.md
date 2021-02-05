@@ -1,3 +1,13 @@
+Note: This is a fork of the original with some minor changes, for use in Python 3 (and hints for Windows users)
+Original: https://github.com/Congren/PYEdit
+
+I have added a requirements.txt file for easier installation.
+Also, for using ImageMagick - the new version does not have the file "convert.exe", but uses "magick.exe"
+This probably requires createing a symbolic link from the old name to the new one.
+As per this advice: https://legacy.imagemagick.org/discourse-server/viewtopic.php?t=29582
+On Windows you might need to run a command similar to this, but from an elevated (Administrator) windows:
+ mklink /H "C:\Program Files\ImageMagick-7.0.10-Q16-HDRI\convert.exe" "C:\Program Files\ImageMagick-7.0.10-Q16-HDRI\magick.exe"
+
 Required Libraries and Modules:
 
 -MoviePy: https://github.com/Zulko/moviepy
